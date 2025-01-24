@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && empty($errors)) {
             $mail->Timeout = 15;
 
             // Recipients
-            $mail->setFrom('yuritsantos.0@gmail.com', 'Website Feedback', false);
+            $mail->setFrom('yuritsantos.0@gmail.com', 'Game Feedback', false);
             $mail->addAddress($to_email);
             $mail->addReplyTo($sender_email);
 
@@ -84,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && empty($errors)) {
 
             // Clear form values
             $sender_email = $subject = $message_content = '';
-            echo "<div class='success'>Thank you for your feedback! We'll respond shortly.</div>";
+            echo "<div class='success'>Thank you for your feedback!</div>";
 
         } catch (Exception $e) {
             $errorMessage = "Message could not be sent. Mailer Error: " . htmlspecialchars($mail->ErrorInfo);
